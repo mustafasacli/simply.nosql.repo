@@ -396,3 +396,14 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Simply.NoSql.Soln/Output/Simply.RavenDb.Core/Simply.RavenDb.Core.xml
+/Simply.NoSql.Soln/Output/Simply.RavenDb.Core/Simply.RavenDb.Core.dll
+/Simply.NoSql.Soln/Output/Simply.RavenDb.Core
+/Simply.NoSql.Soln/Output/Simply.MongoDb.Core/Simply.MongoDb.Core.xml
+/Simply.NoSql.Soln/Output/Simply.MongoDb.Core/Simply.MongoDb.Core.dll
+/Simply.NoSql.Soln/Output/Simply.MongoDb.Core
+/Simply.NoSql.Soln/Output/Simply.LiteDb.Core/Simply.LiteDb.Core.xml
+/Simply.NoSql.Soln/Output/Simply.LiteDb.Core/Simply.LiteDb.Core.dll
+/Simply.NoSql.Soln/Output/Simply.LiteDb.Core
+/Simply.NoSql.Soln/Output/Simply.ElasticSearch.Core/Simply.ElasticSearch.Core.xml
+/Simply.NoSql.Soln/Output/Simply.ElasticSearch.Core/Simply.ElasticSearch.Core.dll
