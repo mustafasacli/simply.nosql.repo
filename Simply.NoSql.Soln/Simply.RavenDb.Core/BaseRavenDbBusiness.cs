@@ -21,6 +21,8 @@ namespace Simply.RavenDb.Core
         private static readonly ILog logger =
             LogManager.GetLogger(typeof(BaseRavenDbBusiness<TObject>));
 
+        private static readonly object lockObject = new object();
+
         /// <summary>   The session. </summary>
         private IDocumentSession session;
 
@@ -61,7 +63,11 @@ namespace Simply.RavenDb.Core
             {
                 if (session == null)
                 {
-                    session = DocumentStore.OpenSession();
+                    lock (lockObject)
+                    {
+                        if (session == null)
+                            session = DocumentStore.OpenSession();
+                    }
                 }
 
                 return session;
