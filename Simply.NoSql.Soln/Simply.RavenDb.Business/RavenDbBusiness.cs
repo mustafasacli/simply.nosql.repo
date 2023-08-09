@@ -31,6 +31,11 @@ namespace Simply.RavenDb.Business
             return 1;
         }
 
+        public int Delete(string oid)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Gets the model by ıd.
         /// </summary>
