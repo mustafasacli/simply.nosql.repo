@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simply.RavenDb.Core", "Simp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simply.NoSql.Business.Core", "Simply.NoSql.Business.Core\Simply.NoSql.Business.Core.csproj", "{91157C6F-1883-456E-87D7-37F9F241A6D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simply.RavenDb.ConsoleApp", "Simply.RavenDb.ConsoleApp\Simply.RavenDb.ConsoleApp.csproj", "{EF0D4B12-6B13-40A4-BC64-517F2AA86DF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simply.RavenDb.Business", "Simply.RavenDb.Business\Simply.RavenDb.Business.csproj", "{B9EB88E8-DE88-4E16-824D-7EA9C50586A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{91157C6F-1883-456E-87D7-37F9F241A6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91157C6F-1883-456E-87D7-37F9F241A6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91157C6F-1883-456E-87D7-37F9F241A6D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF0D4B12-6B13-40A4-BC64-517F2AA86DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF0D4B12-6B13-40A4-BC64-517F2AA86DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF0D4B12-6B13-40A4-BC64-517F2AA86DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF0D4B12-6B13-40A4-BC64-517F2AA86DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9EB88E8-DE88-4E16-824D-7EA9C50586A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EB88E8-DE88-4E16-824D-7EA9C50586A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9EB88E8-DE88-4E16-824D-7EA9C50586A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EB88E8-DE88-4E16-824D-7EA9C50586A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
