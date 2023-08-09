@@ -57,7 +57,7 @@ namespace Simply.RavenDb.Core
         ///
         /// <value> The session. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public IDocumentSession Session
+        protected IDocumentSession Session
         {
             get
             {
@@ -81,7 +81,7 @@ namespace Simply.RavenDb.Core
         ///
         /// <returns>   The documents. </returns>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public virtual IQueryable<TObject> GetDocuments()
+        protected virtual IQueryable<TObject> GetDocuments()
         {
             return Session.Query<TObject>();
         }
@@ -95,7 +95,7 @@ namespace Simply.RavenDb.Core
         ///
         /// <returns>   The document. </returns>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public virtual TObject GetDocument(string oid)
+        protected virtual TObject GetDocument(string oid)
         {
             return Session.Load<TObject>(oid);
         }
@@ -109,7 +109,7 @@ namespace Simply.RavenDb.Core
         ///
         /// <returns>   The documents. </returns>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public virtual IQueryable<TObject> GetDocuments(IEnumerable<string> ids)
+        protected virtual IQueryable<TObject> GetDocuments(IEnumerable<string> ids)
         {
             return Session.Load<TObject>(ids).AsQueryable();
         }
@@ -122,7 +122,7 @@ namespace Simply.RavenDb.Core
         /// <param name="entity">   The entity. </param>
         /// <param name="autoSave"> (Optional) True to automatically save. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public virtual void AddDocument(TObject entity, bool autoSave = true)
+        protected virtual void AddDocument(TObject entity, bool autoSave = true)
         {
             try
             {
@@ -147,7 +147,7 @@ namespace Simply.RavenDb.Core
         /// <param name="entity">   The entity. </param>
         /// <param name="autoSave"> (Optional) True to automatically save. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public virtual void UpdateDocument(TObject entity, bool autoSave = true)
+        protected virtual void UpdateDocument(TObject entity, bool autoSave = true)
         {
             try
             {
@@ -172,7 +172,7 @@ namespace Simply.RavenDb.Core
         /// <param name="entity">   The entity. </param>
         /// <param name="autoSave"> (Optional) True to automatically save. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public virtual void DeleteDocument(TObject entity, bool autoSave = true)
+        protected virtual void DeleteDocument(TObject entity, bool autoSave = true)
         {
             try
             {
@@ -197,7 +197,7 @@ namespace Simply.RavenDb.Core
         /// <param name="oid">      The oid. </param>
         /// <param name="autoSave"> (Optional) True to automatically save. </param>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public virtual void DeleteDocument(string oid, bool autoSave = true)
+        protected virtual void DeleteDocument(string oid, bool autoSave = true)
         {
             try
             {

@@ -40,20 +40,20 @@ namespace Simply.RavenDb.Core
         /// gets Db Server Url
         /// </summary>
         public string DbServerUrl
-        { get; private set; }
+        { get; protected set; }
 
         /// <summary>
         /// gets Default Database Name
         /// </summary>
         public string DefaultDatabaseName
-        { get; private set; }
+        { get; protected set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets the document store. </summary>
         ///
         /// <value> The document store. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        public IDocumentStore DocumentStore
+        protected IDocumentStore DocumentStore
         {
             get
             {
