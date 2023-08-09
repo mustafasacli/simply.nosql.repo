@@ -34,6 +34,13 @@ namespace Simply.NoSql.Business.Core.Interfaces
         int Delete(TObject model);
 
         /// <summary>
+        /// Deletes the model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>An int.</returns>
+        int Delete(string oid);
+
+        /// <summary>
         /// Gets the model by parameters.
         /// </summary>
         /// <param name="parameterPairs">The parameter pairs.</param>
