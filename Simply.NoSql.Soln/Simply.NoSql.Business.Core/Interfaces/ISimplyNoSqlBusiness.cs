@@ -45,6 +45,6 @@ namespace Simply.NoSql.Business.Core.Interfaces
         /// </summary>
         /// <param name="parameterPairs">The parameter pairs.</param>
         /// <returns>A list of TObjects.</returns>
-        IEnumerable<TObject> GetByParameters(IDictionary<string, object> parameterPairs);
+        IEnumerable<TObject> GetByParameters(IDictionary<string, object> parameterPairs = null);
     }
 }
