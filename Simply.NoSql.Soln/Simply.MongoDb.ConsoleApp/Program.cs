@@ -89,7 +89,7 @@ namespace Simply.MongoDb.ConsoleApp
             return result;
         }
 
-        public IEnumerable<SampleModel> GetByParameters(IDictionary<string, object> parameterPairs)
+        public IEnumerable<SampleModel> GetByParameters(IDictionary<string, object> parameterPairs = null)
         {
             throw new NotImplementedException();
         }
