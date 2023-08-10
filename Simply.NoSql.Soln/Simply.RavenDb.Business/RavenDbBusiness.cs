@@ -47,7 +47,7 @@ namespace Simply.RavenDb.Business
             return model;
         }
 
-        public IEnumerable<T> GetByParameters(IDictionary<string, object> parameterPairs)
+        public IEnumerable<T> GetByParameters(IDictionary<string, object> parameterPairs = null)
         {
             throw new NotImplementedException();
         }
