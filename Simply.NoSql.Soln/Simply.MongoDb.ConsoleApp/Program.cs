@@ -7,6 +7,8 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson.Serialization;
+using MongoDB;
 
 namespace Simply.MongoDb.ConsoleApp
 {
@@ -17,17 +19,20 @@ namespace Simply.MongoDb.ConsoleApp
             SampleModel model = new SampleModel()
             {
                 OId = Guid.NewGuid().ToString(),
-                Id = 101,
+                //Id = 101,
                 FirstName = "Mustafa",
                 LastName = "Sacli",
-                CreatedOn = DateTime.Now,
-                CreatedOnTimestamp = DateTime.Now.Ticks
+                CreatedOn = DateTime.UtcNow.AddHours(3),
+                CreatedOnTimestamp = DateTime.UtcNow.AddHours(3).Ticks
             };
 
             using (MongoDbBusiness business = new MongoDbBusiness())
             {
                 var result = business.Save(model);
                 Console.WriteLine("Result: " + result);
+                var model2 = business.GetById<string>(model.OId);
+                Console.WriteLine(model2.CreatedOn.ToString("dd-MM-yyyy HH:mm:ss.ffffff"));
+                Console.WriteLine(((new DateTime(1970, 1, 1)).AddTicks(model2.CreatedOnTimestamp)).ToString("dd-MM-yyyy HH:mm:ss.ffffff"));
             }
 
             Console.ReadKey();
@@ -40,8 +45,8 @@ namespace Simply.MongoDb.ConsoleApp
         public string OId
         { get; set; }
 
-        public long Id
-        { get; set; }
+        //public long Id
+        //{ get; set; }
 
         public string FirstName
         { get; set; }
