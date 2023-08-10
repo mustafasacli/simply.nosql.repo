@@ -8,7 +8,7 @@ namespace Simply.LiteDb.Core
     /// </summary>
     public abstract class BaseLiteDbBusiness<T> : IDisposable where T : class
     {
-        protected LiteDatabase database = null;
+        protected LiteDatabase database;
         protected readonly ILiteCollection<T> liteCollection;
 
         /// <summary>
@@ -26,8 +26,8 @@ namespace Simply.LiteDb.Core
         /// <summary>
         /// Gets or sets the collection.
         /// </summary>
-        public ILiteCollection<T> Collection
-        { get; protected set; }
+        protected ILiteCollection<T> Collection
+        { get; set; }
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
