@@ -10,14 +10,16 @@ namespace Simply.LiteDb.ConsoleApp
         {
             for (int counter = 0; counter < 100; counter++)
             {
+                DateTime now = DateTime.Now;
                 SampleModel model = new SampleModel()
                 {
                     OId = Guid.NewGuid().ToString(),
                     //Id = 101,
                     FirstName = "Mustafa",
                     LastName = "Sacli",
-                    CreatedOn = DateTime.UtcNow.AddHours(3),
-                    CreatedOnTimestamp = DateTime.UtcNow.AddHours(3).Ticks
+                    CreatedOn = now,
+                    CreatedOnTimestamp = now.AddDays(1).Ticks,
+                    Details = new string[] { "ali", "veli", "serhan" }
                 };
                 using (LiteDbBusiness business = new LiteDbBusiness())
                 {

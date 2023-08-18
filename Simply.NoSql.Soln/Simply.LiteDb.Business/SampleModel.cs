@@ -21,5 +21,8 @@ namespace Simply.LiteDb.Business
 
         public long CreatedOnTimestamp
         { get; set; }
+
+        public string[] Details
+        { get; set; }
     }
 }
