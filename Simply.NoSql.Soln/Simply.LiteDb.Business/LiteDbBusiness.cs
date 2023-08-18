@@ -1,10 +1,7 @@
 ﻿using Simply.LiteDb.Core;
 using Simply.NoSql.Business.Core.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Simply.LiteDb.Business
 {
