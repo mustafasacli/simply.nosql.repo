@@ -10,7 +10,7 @@ namespace Simply.LiteDb.Business
     /// </summary>
     public class LiteDbBusiness : BaseLiteDbBusiness<SampleModel>, ISimplyNoSqlBusiness<SampleModel>
     {
-        public LiteDbBusiness() : base("C:\\appLogDb.db")
+        public LiteDbBusiness() : base("Filename=C:\\appLogDb.db;")
         { }
 
         public int Delete(SampleModel model)
