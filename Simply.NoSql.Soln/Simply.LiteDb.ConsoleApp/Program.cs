@@ -18,7 +18,7 @@ namespace Simply.LiteDb.ConsoleApp
                     FirstName = "Mustafa",
                     LastName = "Sacli",
                     CreatedOn = now,
-                    CreatedOnTimestamp = now.AddDays(1).Ticks,
+                    CreatedOnTimestamp = now.Ticks,
                     Details = new string[] { "ali", "veli", "serhan" }
                 };
                 using (LiteDbBusiness business = new LiteDbBusiness())
@@ -27,7 +27,7 @@ namespace Simply.LiteDb.ConsoleApp
                     Console.WriteLine("Result: " + result);
                     var model2 = business.GetById<string>(model.OId);
                     Console.WriteLine(model2.CreatedOn.ToString("dd-MM-yyyy HH:mm:ss.ffffff"));
-                    Console.WriteLine(((new DateTime(1970, 1, 1)).AddTicks(model2.CreatedOnTimestamp)).ToString("dd-MM-yyyy HH:mm:ss.ffffff"));
+                    Console.WriteLine(((new DateTime()).AddTicks(model2.CreatedOnTimestamp)).ToString("dd-MM-yyyy HH:mm:ss.ffffff"));
                 }
             }
 

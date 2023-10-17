@@ -8,7 +8,14 @@ namespace Simply.LiteDb.Core
     /// </summary>
     public abstract class BaseLiteDbBusiness<T> : IDisposable where T : class
     {
+        /// <summary>
+        /// LiteDatabase object instance.
+        /// </summary>
         protected LiteDatabase database;
+
+        /// <summary>
+        /// Database object Collection.
+        /// </summary>
         protected readonly ILiteCollection<T> liteCollection;
 
         /// <summary>
