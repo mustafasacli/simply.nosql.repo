@@ -43,5 +43,13 @@ namespace Simply.LiteDb.Core
         {
             database?.Dispose();
         }
+
+        /// <summary>
+        /// Rebuild all database to remove unused pages - reduce data file
+        /// </summary>
+        public void Rebuild()
+        {
+            database?.Rebuild();
+        }
     }
 }

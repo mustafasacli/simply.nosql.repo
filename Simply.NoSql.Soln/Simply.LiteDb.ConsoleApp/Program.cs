@@ -8,21 +8,21 @@ namespace Simply.LiteDb.ConsoleApp
     {
         private static void Main(string[] args)
         {
-            for (int counter = 0; counter < 100; counter++)
+            using (LiteDbBusiness business = new LiteDbBusiness())
             {
-                DateTime now = DateTime.Now;
-                SampleModel model = new SampleModel()
+                for (int counter = 0; counter < 100; counter++)
                 {
-                    OId = Guid.NewGuid().ToString(),
-                    //Id = 101,
-                    FirstName = "Mustafa",
-                    LastName = "Sacli",
-                    CreatedOn = now,
-                    CreatedOnTimestamp = now.Ticks,
-                    Details = new string[] { "ali", "veli", "serhan" }
-                };
-                using (LiteDbBusiness business = new LiteDbBusiness())
-                {
+                    DateTime now = DateTime.Now;
+                    SampleModel model = new SampleModel()
+                    {
+                        OId = Guid.NewGuid().ToString(),
+                        //Id = 101,
+                        FirstName = "Mustafa",
+                        LastName = "Sacli",
+                        CreatedOn = now,
+                        CreatedOnTimestamp = now.Ticks,
+                        Details = new string[] { "ali", "veli", "serhan" }
+                    };
                     var result = business.Save(model);
                     Console.WriteLine("Result: " + result);
                     var model2 = business.GetById<string>(model.OId);
