@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using System;
+using System.Globalization;
 
 namespace Simply.MongoDb.ConsoleApp
 {
@@ -31,7 +32,7 @@ namespace Simply.MongoDb.ConsoleApp
                 throw new ArgumentNullException(nameof(connectionString));
 
             var client = new MongoClient(connectionString);
-            this.Collection = client.GetDatabase(databaseName).GetCollection<T>(typeof(T).Name.ToLowerInvariant());
+            this.Collection = client.GetDatabase(databaseName).GetCollection<T>(typeof(T).Name.ToLower(CultureInfo.InvariantCulture));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
