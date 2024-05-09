@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using System;
+using System.Globalization;
 
 namespace Simply.MongoDb.Core
 {
@@ -12,6 +13,11 @@ namespace Simply.MongoDb.Core
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public abstract class BaseMongoDbBusiness<T> : IDisposable where T : class
     {
+        /// <summary>
+        /// The client
+        /// </summary>
+        protected MongoClient client;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Specialised constructor for use only by derived class. </summary>
         ///
@@ -30,8 +36,8 @@ namespace Simply.MongoDb.Core
             if (string.IsNullOrWhiteSpace(connectionString))
                 throw new ArgumentNullException(nameof(connectionString));
 
-            var client = new MongoClient(connectionString);
-            this.Collection = client.GetDatabase(databaseName).GetCollection<T>(typeof(T).Name.ToLowerInvariant());
+            client = new MongoClient(connectionString);
+            this.Collection = client.GetDatabase(databaseName).GetCollection<T>(typeof(T).Name.ToLower(CultureInfo.InvariantCulture));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,6 +59,7 @@ namespace Simply.MongoDb.Core
         public void Dispose()
         {
             this.Collection = null;
+            client = null;
         }
     }
 }
